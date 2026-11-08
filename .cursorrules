@@ -1,0 +1,17 @@
+# Autosell Web Architecture & Coding Standards
+
+## 1. Inventory & SEO Data Modeling
+- Always include structured JSON-LD (`schema.org/Vehicle`) for listing pages: `name`, `offers` (price, currency: MXN), `mileageFromOdometer`, `vehicleModelDate`, `brand`.
+- Enforce strict typing for inventory items: Make, Model, Year, Price, Mileage (km), Transmission, ExteriorColor, Images[], Status (Available/Sold).
+
+## 2. Dynamic Filtering & URL State
+- Synchronize search filters (Make, Model, Year, Price range) with URL search params (`?make=ford&year=2023`) for shareable search links.
+- Render dynamic cascading options (selecting a Make filters the available Models in real time).
+
+## 3. Lead Generation Links
+- Standardize WhatsApp button links:
+  `https://wa.me/<NUMBER>?text=Hola,%20estoy%20interesado%20en%20el%20veh%C3%ADculo:%20[Make]%20[Model]%20[Year]%20([Price])`
+
+## 4. Media & Performance
+- All car gallery images must use explicit aspect ratios to prevent Layout Shift.
+- Image grids must lazy-load images past the fold.
