@@ -75,5 +75,6 @@ From `.cursorrules`:
 
 ## Local notes
 
-- Yandex Disk sync can slow `node_modules` I/O; prefer installing on a non-synced volume if builds stall.
+- Yandex Disk sync can empty or strip execute bits from `node_modules/.bin/*`. If `next: Permiso denegado` or the binary is 0 bytes, run `rm -rf node_modules && npm install` (ideally install to a non-synced path and symlink).
 - `.brand/` PDF page renders are gitignored (local design reference only).
+- Package name is `autosell-web` (lockfile must match `package.json`).
